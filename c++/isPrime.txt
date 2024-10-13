@@ -1,0 +1,30 @@
+Problem:
+Given an integer N, determine if it is prime. A prime number is only divisible by 1 and itself, and it must be greater than 1.
+
+Initial Approach (Inefficient):
+The initial approach checked all divisors from 2 to √N
+ , which results in a time complexity of O(N). This approach was too slow for large values of N.
+
+Optimized Approach:
+We optimized the approach by using the fact that:
+
+A prime number greater than 3 must be of the form 6k±1 for some integer k
+Divisors larger than √N don't need to be checked because if N is divisible by any number greater than 
+√N  , it must also have a smaller corresponding divisor.
+Steps in the Optimized Approach:
+Handle small cases:
+
+If N <= 1, it's not prime.
+If N == 2 or N == 3, it's prime.
+If N is divisible by 2 or 3, it's not prime.
+Check for divisors:
+
+Start checking divisors from 5 up to √N
+ .
+Increment by 6 (i += 6) to only check numbers of the form 
+6𝑘±1
+6k±1 (i.e., numbers like 5, 7, 11, 13, etc.).
+If any divisor is found, return false; otherwise, return true.
+Time complexity:
+
+This approach has a time complexity of O(√N), which is much faster and efficient, especially for large values of N.
