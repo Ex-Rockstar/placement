@@ -1,0 +1,105 @@
+import java.util.ArrayList;
+
+// Basic Java Class template
+public class Templates {
+
+    // Instance variables
+    private int variable;
+
+    // Constructor
+    public Templates(int variable) {
+        this.variable = variable;
+    }
+
+    // Method
+    public void methodName() {
+        // Method body
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        // Creating an object of the class
+        Templates obj = new Templates(10);
+        obj.methodName();
+
+        // Java Interface Example
+        InterfaceExample interfaceImpl = new InterfaceExample() {
+            @Override
+            public void method1() {
+                // Implementation of method1
+            }
+
+            @Override
+            public int method2(int param) {
+                return param * 2; // Implementation of method2
+            }
+        };
+
+        // Using the interface methods
+        interfaceImpl.method1();
+        System.out.println("Method2 output: " + interfaceImpl.method2(5));
+
+        // Java Abstract Class Example
+        AbstractClassExample abstractObj = new AbstractClassExample() {
+            @Override
+            public void abstractMethod() {
+                // Implementation of abstract method
+            }
+        };
+        abstractObj.concreteMethod(); // Calling concrete method
+
+        // Exception Handling Example
+        try {
+            // Code that may throw an exception
+            int result = 10 / 0; // This will cause an ArithmeticException
+        } catch (ArithmeticException e) {
+            // Handle exception
+            System.out.println("ArithmeticException: " + e.getMessage());
+        } finally {
+            // Code that will run regardless of exception
+            System.out.println("Finally block executed.");
+        }
+
+        // Java Collection (ArrayList) Example
+        ArrayList<String> list = new ArrayList<>();
+        // Add elements
+        list.add("Element1");
+        list.add("Element2");
+
+        // Access elements
+        for (String element : list) {
+            System.out.println(element);
+        }
+
+        // Java Multi-threading Example
+        ThreadExample thread = new ThreadExample();
+        thread.start(); // Start the thread
+    }
+}
+
+// Java Interface template
+interface InterfaceExample {
+    void method1();
+    int method2(int param);
+}
+
+// Java Abstract Class template
+abstract class AbstractClassExample {
+    // Abstract method
+    public abstract void abstractMethod();
+
+    // Concrete method
+    public void concreteMethod() {
+        // Method body
+        System.out.println("Concrete method called.");
+    }
+}
+
+// Java Multi-threading template
+class ThreadExample extends Thread {
+    @Override
+    public void run() {
+        // Code to be executed in the thread
+        System.out.println("Thread is running.");
+    }
+}
