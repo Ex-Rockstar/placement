@@ -8,3 +8,4 @@ class Solution {
         return sqrt-1; //Returns the largest values before it exceeds n
     }
 }
+    

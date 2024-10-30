@@ -5,7 +5,9 @@ class Solution {
             int temp = b; 
             b = a % b;
             a = temp;     
-        }
+        } 
+/*We using the swap technique to
+ retain the original value to use it in the next iteration */
         return a; 
     
     }
